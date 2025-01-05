@@ -1,0 +1,37 @@
+---
+import PostsLayout from "../../layouts/PostsLayout.astro";
+
+export const frontmatter = {
+  image_author: "../public/assets/UserImages/AlejandroLobos.png",
+  img: "../../assets/frameworks/astro.png",
+  title: "Primeros pasos con Astro",
+  date: "1/1/2024",
+  topic: "Learning",
+  topic01: "Astro",
+  topic02: "Dessarrollo",
+  author: "Sofia Fernandez",
+};
+---
+
+<PostsLayout
+  image_author={frontmatter.image_author}
+  img={frontmatter.img}
+  title={frontmatter.title}
+  topic={frontmatter.topic}
+  topic01={frontmatter.topic01}
+  topic02={frontmatter.topic02}
+  date={frontmatter.date}
+  author={frontmatter.author}
+>
+  <p>
+    Astro es un framework moderno para construir sitios web rápidos y
+    eficientes. En este artículo, exploraremos cómo comenzar con Astro y crear
+    tu primer proyecto.
+  </p>
+  <h2>Instalación</h2>
+  <p>
+    Para instalar Astro, necesitas Node.js. Usa el comando <code
+      >npm create astro@latest</code
+    > para empezar.
+  </p>
+</PostsLayout>

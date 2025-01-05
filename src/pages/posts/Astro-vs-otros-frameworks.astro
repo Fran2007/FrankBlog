@@ -1,0 +1,78 @@
+---
+import PostsLayout from "../../layouts/PostsLayout.astro";
+
+export const frontmatter = {
+  image_author: "../public/assets/UserImages/AlejandroLobos.png",
+  img: "/assets/frameworks/astro.png",
+  title: "Astro vs otros frameworks",
+  date: "Nov 4, 2019",
+  topic: "ASTRO",
+  topic01: "HTML",
+  topic02: "CSS",
+  author: "Alejandro Lobos",
+};
+---
+
+<PostsLayout
+  image_author={frontmatter.image_author}
+  img={frontmatter.img}
+  title={frontmatter.title}
+  topic={frontmatter.topic}
+  topic01={frontmatter.topic01}
+  topic02={frontmatter.topic02}
+  date={frontmatter.date}
+  author={frontmatter.author}
+>
+  <p>
+    En el mundo del desarrollo web, hay muchos frameworks populares. En este
+    artículo, compararemos Astro con frameworks como Next.js, Nuxt y SvelteKit.
+  </p>
+
+  <strong class="text-2xl">Rendimiento</strong>
+  <p>
+    Astro sobresale en rendimiento debido a su enfoque en contenido estático.
+  </p>
+  <pre
+    class="bg-gray-800 text-gray-100 p-4 rounded-md overflow-x-auto">
+  {`
+// Ejemplo en Astro para generar contenido estático:
+---
+const posts = [
+  { title: "Primer Post", link: "/post-1" },
+  { title: "Segundo Post", link: "/post-2" },
+];
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog Estático con Astro</title>
+  </head>
+  <body>
+    <ul>
+      {posts.map((post) => (
+        <li>
+          <a href={post.link}>{post.title}</a>
+        </li>
+      ))}
+    </ul>
+  </body>`
+  }
+</pre>
+
+  <strong class="text-2xl">Facilidad de Uso</strong>
+  <p>Astro tiene una curva de aprendizaje baja, ideal para principiantes.</p>
+  <pre
+    class="bg-gray-800 text-gray-100 p-4 rounded-md overflow-x-auto">{`
+// Ejemplo básico en Astro para mostrar un mensaje:
+---
+const framework = "Astro";
+---
+
+<html>
+<body>
+<h1>¡Bienvenido a {framework}!</h1>
+</body>
+</html>`
+}
+</pre>
+</PostsLayout>

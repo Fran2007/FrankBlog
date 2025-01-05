@@ -1,0 +1,97 @@
+---
+import Header from "../components/Header.astro";
+
+export interface Props {
+  image_author: string;
+  img: string;
+  title: string;
+  date: string;
+  topic: string;
+  topic01: string;
+  topic02: string;
+  author: string;
+}
+
+const { img, title, topic, topic01, topic02, date, author, image_author } =
+  Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <title>FrankDev.blog</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      .topic-pill {
+        display: inline-block;
+        background-color: #f0f9ff;
+        color: #0369a1;
+        font-size: 0.875;
+        font-weight: 600;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        margin-right: 0.5rem;
+        margin-button: 0.5rem;
+        text-light: center;
+      }
+    </style>
+  </head>
+
+  <div>
+    <Header />
+  </div>
+
+  <body class="bg-gray-50 text-gray-800">
+    <main class="max-w-4xl mx-auto p-6">
+      <article class="bg-white rounded-lg shadow-md overflow-hidden">
+        <!-- Imagen destacada -->
+        <div class="overflow-hidden">
+          <img
+            src={img}
+            alt={`Imagen principal de ${title}`}
+            class="w-full object-cover rounded-md"
+          />
+        </div>
+
+        <!-- Título -->
+        <header class="px-6 pb-4">
+          <h1 class="text-3xl font-bold text-gray-900">{title}</h1>
+        </header>
+
+        <!-- fecha y imagenes-->
+        <div class="p-4">
+          <div class="flex items-center mb-2">
+            <img
+              src={image_author}
+              alt="Author"
+              class="w-10 h-10 rounded-full"
+            />
+
+            <div class="flex flex-col ml-2">
+              <p class="text-gray-700 font-medium">{author}</p>
+              <p class="text-sm text-gray-700 font-medium">{date}</p>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-t py-4 overflow-w-hidden" />
+
+        <!-- Contenido principal -->
+        <section class="px-6 py-4 text-gray-700">
+          <slot />
+        </section>
+
+        <!-- <div class="flex flex-wrap gap-1 mb-4"></div> -->
+
+        <footer class="px-6 pb-4 text-sm text-gray-500">
+          <span class="topic-pill">{topic}</span>
+          <span class="topic-pill">{topic01}</span>
+          <span class="topic-pill">{topic02}</span>
+        </footer>
+      </article>
+    </main>
+  </body>
+
+
+</html>

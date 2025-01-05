@@ -1,0 +1,120 @@
+---
+import Header from "../components/Header.astro";
+import CardLayout from "../layouts/CardLayout.astro";
+
+import { frontmatter } from "./posts/Astro-vs-otros-frameworks.astro";
+import { frontmatterVue } from "./posts/Explorando-vue.astro";
+import { frontmatterReact } from "./posts/introduccion-a-react.astro";
+import { frontmatterAngular } from "./posts/Introduccion-a-angular.astro";
+import { frontmatterAstoVentages } from "./posts/Ventajas-de-astro.astro";
+
+export const AstroFrommater = {
+  ref: "/posts/astro-vs-otros-frameworks",
+  image_author: frontmatter.image_author,
+  img: "../../assets/frameworks/astro.png",
+  title: frontmatter.title,
+  date: frontmatter.date,
+  description: "En este blog hablaremos de las ventajas de astro js",
+  author: frontmatter.author,
+};
+
+export const VueFrommater = {
+  ref: "/posts/explorando-vue",
+  image_author: frontmatterVue.image_author,
+  img: "../../assets/frameworks/vue.png",
+  title: frontmatterVue.title,
+  date: frontmatter.date,
+  description:
+    "En este blog nos sumergiremos en los facinantes conceptos de vuejs",
+  author: frontmatterVue.author,
+};
+
+export const ReactFrommater = {
+  ref: "/posts/introduccion-a-react",
+  image_author: frontmatterReact.image_author,
+  img: "../../assets/frameworks/react.png",
+  title: frontmatterReact.title,
+  date: frontmatterReact.date,
+  description:
+    "En este blog nos sumergiremos en los facinantes conceptos de vuejs",
+  author: frontmatterReact.author,
+};
+
+export const FrommaterAstro = {
+  ref: "/posts/Ventajas-de-astro",
+  image_author: frontmatterAstoVentages.image_author,
+  img: "../../assets/frameworks/astro02.png",
+  title: frontmatterAstoVentages.title,
+  date: frontmatterAstoVentages.date,
+  description:
+    "En este blog nos sumergiremos en los facinantes conceptos de vuejs",
+  author: frontmatterAstoVentages.author,
+};
+
+export const FrommaterAngular = {
+  ref: "/posts/Introduccion-a-angular",
+  image_author: frontmatterAngular.image_author,
+  img: "../../assets/frameworks/angular.jpg",
+  title: frontmatterAngular.title,
+  date: frontmatterAngular.date,
+  description:
+    "En este blog nos sumergiremos en los facinantes conceptos de vuejs",
+  author: frontmatterAngular.author,
+};
+---
+
+<div>
+  <Header />
+
+  <div class="flex flex-wrap gap-3">
+    <CardLayout
+      image_author={AstroFrommater.image_author}
+      ref={AstroFrommater.ref}
+      img={AstroFrommater.img}
+      title={AstroFrommater.title}
+      date={AstroFrommater.date}
+      description={AstroFrommater.description}
+      author={AstroFrommater.author}
+    />
+
+    <CardLayout
+      image_author={VueFrommater.image_author}
+      ref={VueFrommater.ref}
+      img={VueFrommater.img}
+      title={VueFrommater.title}
+      date={VueFrommater.date}
+      description={VueFrommater.description}
+      author={VueFrommater.author}
+    />
+
+    <CardLayout
+      image_author={ReactFrommater.image_author}
+      ref={ReactFrommater.ref}
+      img={ReactFrommater.img}
+      title={ReactFrommater.title}
+      date={ReactFrommater.date}
+      description={ReactFrommater.description}
+      author={ReactFrommater.author}
+    />
+
+    <CardLayout
+      image_author={FrommaterAstro.image_author}
+      ref={FrommaterAstro.ref}
+      img={FrommaterAstro.img}
+      title={FrommaterAstro.title}
+      date={FrommaterAstro.date}
+      description={FrommaterAstro.description}
+      author={FrommaterAstro.author}
+    />
+
+    <CardLayout
+      image_author={FrommaterAngular.image_author}
+      ref={FrommaterAngular.ref}
+      img={FrommaterAngular.img}
+      title={FrommaterAngular.title}
+      date={FrommaterAngular.date}
+      description={FrommaterAngular.description}
+      author={FrommaterAngular.author}
+    />
+  </div>
+</div>

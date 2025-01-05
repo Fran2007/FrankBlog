@@ -1,0 +1,107 @@
+---
+import PostsLayout from "../../layouts/PostsLayout.astro";
+
+export const frontmatterAstoVentages = {
+  image_author: "../public/assets/UserImages/midudev.png",
+  img: "../../assets/frameworks/astro02.png",
+  title: "Ventajas de astro",
+  date: "Jun 10, 2025",
+  topic: "Astro",
+  topic01: "Framework",
+  topic02: "Dessarrollo",
+  author: "Midudev",
+};
+---
+
+<PostsLayout
+  image_author={frontmatterAstoVentages.image_author}
+  img={frontmatterAstoVentages.img}
+  title={frontmatterAstoVentages.title}
+  topic={frontmatterAstoVentages.topic}
+  topic01={frontmatterAstoVentages.topic01}
+  topic02={frontmatterAstoVentages.topic02}
+  date={frontmatterAstoVentages.date}
+  author={frontmatterAstoVentages.author}
+>
+  <p class="mb-4">
+    Astro es un framework moderno que se destaca por su enfoque en el
+    rendimiento y la simplicidad, especialmente para la generación de sitios
+    estáticos. Este enfoque lo convierte en una opción ideal para construir
+    sitios rápidos y eficientes, sin sacrificar la flexibilidad o las
+    características avanzadas.
+  </p>
+
+  <h2 class="text-2xl font-semibold mb-3">¿Por qué Elegir Astro?</h2>
+  <p class="mb-4">
+    Astro permite crear sitios estáticos con un enfoque optimizado para la
+    velocidad, lo que resulta en tiempos de carga extremadamente rápidos y una
+    excelente experiencia para el usuario final. A diferencia de otros
+    frameworks que cargan JavaScript de manera predeterminada, Astro genera HTML
+    estático por defecto, lo que reduce considerablemente la carga de trabajo
+    del navegador.
+  </p>
+
+  <h2 class="text-2xl font-semibold mb-3">Características Principales</h2>
+  <ul class="list-disc pl-6 space-y-3">
+    <li>
+      <strong class="font-medium">Generación Estática</strong>: Astro se enfoca
+      en la generación de sitios estáticos, lo que significa que todo el
+      contenido se procesa en el momento de la construcción. Esto resulta en
+      tiempos de carga ultrarrápidos y menos recursos necesarios en el servidor.
+      <pre
+        class="bg-gray-800 text-gray-100 p-4 rounded-md overflow-x-auto">
+{`// Ejemplo de configuración de construcción estática en astro.config.mjs
+export default {
+  buildOptions: {
+    site: 'https://mi-sitio-estatico.com',
+    outDir: './dist', // Carpeta de salida
+  }
+};`}</pre>
+    </li>
+    <li>
+      <strong class="font-medium">Soporte para Múltiples Frameworks</strong>:
+      Astro permite utilizar componentes de diferentes frameworks como React,
+      Vue y Svelte dentro de una misma aplicación. Esto te da flexibilidad para
+      combinar tus herramientas favoritas en un solo proyecto.
+      <pre
+        class="bg-gray-800 text-gray-100 p-4 rounded-md overflow-x-auto">
+{`// Ejemplo de componente React en Astro
+import React from 'react';
+
+const MiComponenteReact = () => {
+  return <h1>¡Hola desde React!</h1>;
+};
+
+export default MiComponenteReact;`}
+        </pre>
+      <h1 class="text-2xl py-6">Componente Astro con react</h1>
+      <pre
+        class="bg-gray-800 text-gray-100 p-4 rounded-md overflow-x-auto">
+{`---
+// Componente Astro que integra React
+import MiComponenteReact from './components/MiComponenteReact.jsx';
+---
+<MiComponenteReact />`}
+        </pre>
+    </li>
+    <li>
+      <strong class="font-medium">Optimización Automática de Imágenes</strong>:
+      Astro optimiza las imágenes automáticamente, convirtiéndolas al formato
+      más eficiente disponible, como WebP o AVIF, para mejorar el rendimiento y
+      reducir el tamaño de los archivos.
+      <li class="bg-gray-800 text-gray-100 p-4 rounded-md overflow-x-auto">
+        <pre
+          class="bg-gray-800 text-gray-100 p-4 rounded-md overflow-x-auto">
+{`// Componente React simple
+import React from 'react';
+
+const Saludo = () => {
+  return <h1>¡Hola desde Astro y React!</h1>;
+};
+
+export default Saludo;`}
+</pre>
+      </li>
+    </li>
+  </ul>
+</PostsLayout>
