@@ -7,6 +7,7 @@ import { frontmatterVue } from "./posts/Explorando-vue.astro";
 import { frontmatterReact } from "./posts/introduccion-a-react.astro";
 import { frontmatterAngular } from "./posts/Introduccion-a-angular.astro";
 import { frontmatterAstoVentages } from "./posts/Ventajas-de-astro.astro";
+import { frontmatterVercel } from "./posts/vercel-ventajas.astro";
 
 export const AstroFrommater = {
   ref: "/posts/astro-vs-otros-frameworks",
@@ -54,11 +55,21 @@ export const FrommaterAstro = {
 export const FrommaterAngular = {
   ref: "/posts/Introduccion-a-angular",
   image_author: frontmatterAngular.image_author,
-  img: "../../assets/frameworks/angular.jpg",
+  img: "../../assets/frameworks/angular.png",
   title: frontmatterAngular.title,
   date: frontmatterAngular.date,
   description:
     "En este blog nos sumergiremos en los facinantes conceptos de vuejs",
+  author: frontmatterAngular.author,
+};
+
+export const FrontmatterVercel = {
+  ref: "/posts/Vercel-ventajas",
+  image_author: frontmatterVercel.image_author,
+  img: "../../assets/frameworks/angular.png",
+  title: frontmatterVercel.title,
+  date: frontmatterVercel.date,
+  description: "En este blog nos sumergiremos en las ventajas de Vercel",
   author: frontmatterAngular.author,
 };
 ---
@@ -115,6 +126,16 @@ export const FrommaterAngular = {
       date={FrommaterAngular.date}
       description={FrommaterAngular.description}
       author={FrommaterAngular.author}
+    />
+
+    <CardLayout
+      image_author={FrontmatterVercel.image_author}
+      ref={FrontmatterVercel.ref}
+      img={FrontmatterVercel.img}
+      title={FrontmatterVercel.title}
+      date={FrontmatterVercel.date}
+      description={FrontmatterVercel.description}
+      author={FrontmatterVercel.author}
     />
   </div>
 </div>

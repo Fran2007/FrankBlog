@@ -1,0 +1,135 @@
+---
+import PostsLayout from "../../layouts/PostsLayout.astro";
+
+export const frontmatterVercel = {
+  image_author: "../public/assets/UserImages/Nicobyte.jpg",
+  img: "../../assets/frameworks/angular.png",
+  title: "Ventajas de vercel",
+  date: "March 5, 2025",
+  topic: "Learning",
+  topic01: "Astro",
+  topic02: "Dessarrollo",
+  author: "Sofia Fernandez",
+};
+---
+
+<PostsLayout
+  image_author={frontmatterVercel.image_author}
+  img={frontmatterVercel.img}
+  title={frontmatterVercel.title}
+  date={frontmatterVercel.date}
+  topic={frontmatterVercel.topic}
+  topic01={frontmatterVercel.topic01}
+  topic02={frontmatterVercel.topic02}
+  author={frontmatterVercel.author}
+>
+  <html lang="es">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta
+        name="description"
+        content="Explora las ventajas de utilizar Vercel como plataforma de despliegue de aplicaciones web."
+      />
+      <meta
+        name="keywords"
+        content="Vercel, Despliegue, Aplicaciones Web, Ventajas, Hosting, Frontend"
+      />
+      <meta name="author" content="Tu Nombre" />
+      <title>Ventajas de Utilizar Vercel</title>
+      <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+      <header>
+        <h1>
+          Ventajas de Utilizar Vercel para el Despliegue de Aplicaciones Web
+        </h1>
+      </header>
+
+      <main>
+        <section>
+          <h2>¿Qué es Vercel?</h2>
+          <p>
+            Vercel es una plataforma de despliegue de aplicaciones web que
+            permite a los desarrolladores publicar sus proyectos de manera
+            rápida, segura y eficiente. Es conocida por su integración con
+            frameworks de frontend como Next.js y su capacidad para ofrecer una
+            experiencia de usuario rápida y optimizada.
+          </p>
+        </section>
+
+        <section>
+          <h2>Principales Ventajas de Vercel</h2>
+          <ul>
+            <li>
+              <strong>Despliegue Rápido y Sencillo:</strong> Vercel permite desplegar
+              aplicaciones con solo unos clics, gracias a su integración directa
+              con GitHub, GitLab y Bitbucket.
+            </li>
+            <li>
+              <strong>Optimización Automática:</strong> La plataforma optimiza automáticamente
+              el rendimiento de las aplicaciones, garantizando tiempos de carga rápidos
+              y una excelente experiencia de usuario.
+            </li>
+            <li>
+              <strong>Escalabilidad Global:</strong> Vercel utiliza una red de CDN
+              (Content Delivery Network) distribuida globalmente, lo que asegura
+              que las aplicaciones se carguen rápidamente sin importar la ubicación
+              del usuario.
+            </li>
+            <li>
+              <strong>Integración con Frameworks:</strong> Vercel es compatible con
+              frameworks populares como Next.js, Nuxt.js, Angular, React y muchos
+              más, facilitando el despliegue de proyectos modernos.
+            </li>
+            <li>
+              <strong>Previsualización de Despliegues:</strong> Cada vez que realizas
+              un cambio en tu proyecto, Vercel genera una URL de previsualización,
+              lo que permite ver cómo afectarán los cambios antes de publicarlos.
+            </li>
+            <li>
+              <strong>Funcionalidades Serverless:</strong> Vercel ofrece funciones
+              serverless que permiten ejecutar lógica del lado del servidor sin necesidad
+              de configurar servidores dedicados.
+            </li>
+            <li>
+              <strong>Seguridad y Certificados SSL:</strong> Todos los proyectos
+              desplegados en Vercel incluyen certificados SSL gratuitos para garantizar
+              la seguridad de las conexiones.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Casos de Uso</h2>
+          <p>
+            Vercel es ideal para desarrolladores que buscan una solución rápida
+            y eficiente para desplegar sitios web estáticos, aplicaciones SPA
+            (Single Page Application) y proyectos basados en frameworks
+            modernos. Es especialmente útil para equipos que trabajan con
+            metodologías de desarrollo continuo.
+          </p>
+        </section>
+
+        <section>
+          <h2>Conclusión</h2>
+          <p>
+            En resumen, Vercel se ha convertido en una de las plataformas de
+            despliegue más populares por sus características avanzadas,
+            facilidad de uso y rendimiento optimizado. Si eres desarrollador
+            web, integrar Vercel en tu flujo de trabajo puede mejorar
+            significativamente tus tiempos de desarrollo y la experiencia del
+            usuario final.
+          </p>
+        </section>
+      </main>
+
+      <footer>
+        <p>
+          &copy; 2025. Artículo creado por Tu Nombre. Todos los derechos
+          reservados.
+        </p>
+      </footer>
+    </body>
+  </html>
+</PostsLayout>

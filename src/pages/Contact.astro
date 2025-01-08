@@ -1,0 +1,105 @@
+---
+import Header from "../components/Header.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* Contenedor del equipo */
+      .team-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        justify-items: center;
+        padding: 20px;
+      }
+
+      /* Estilo de cada miembro del equipo */
+      .team-member {
+        text-align: center;
+      }
+
+      /* Estilo de las imágenes */
+      .team-img {
+        width: 220px;
+        height: 220px;
+        left: 60px;
+        object-fit: cover;
+        border-radius: 12px;
+        background-color: #f3f3f3;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .team-img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Estilo de los nombres */
+      .team-member h3 {
+        margin-top: 2px;
+        color: #ffffff;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body class="font-sans">
+    <!-- Header -->
+    <Header />
+
+    <!-- About Section -->
+    <div class="max-w-screen-lg mx-auto p-8 text-center">
+      <h1 class="text-black text-4xl font-bold mb-4">About</h1>
+      <p class="text-black mb-10">
+        Este es un blog interesados en el conocimiento.
+      </p>
+
+      <!-- Team Members Grid -->
+      <div class="team-container">
+        <!-- Team Member 1 -->
+        <div class="team-member">
+          <img
+            src="../public/assets/UserImages/Nicobyte.jpg"
+            alt="Nocobyte"
+            class="team-img"
+          />
+          <h3>Alejandro Lobos</h3>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="team-member">
+          <img
+            src="../public/assets/UserImages/Fernando.jpg"
+            alt="Fernando"
+            class="team-img"
+          />
+          <h3>Fernando</h3>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="team-member">
+          <img
+            src="../public/assets/UserImages/Jhon.jpg"
+            alt="Jhon"
+            class="team-img"
+          />
+          <h3>Jhon</h3>
+        </div>
+      </div>
+
+      <!-- Team Description -->
+      <div class="text-black text-lg leading-relaxed mt-4 mb-4 font-sans">
+        <p>
+          We're a multi-cultural team from around the world! We come from
+          diverse backgrounds, bringing different personalities, experiences,
+          and skills to the job. This is what makes our team so special.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

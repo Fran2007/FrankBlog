@@ -1,14 +1,18 @@
 ---
+import Header from "../components/Header.astro";
 import HeroSection from "../components/HeroSection.astro";
 
 import CardCategoryLayout from "../layouts/CardCategoryLayout.astro";
 ---
+
+<Header />
 
 <div
   class="bg-[#F4F5F7] min-h-screen flex flex-col items-center px-8 space-y-7"
   aria-label="About section"
 >
   <HeroSection />
+
   <div class="mt-8" aria-hidden="true">
     <!-- <ArrowDownIcon className="h-[40px] w-[40px] animate-bounce text-gray-700" /> -->
   </div>
