@@ -1,60 +1,56 @@
 ---
-export interface CardProps {
-  ref: string;
-  image_author: string;
-  img: string;
+interface Props {
   title: string;
   date: string;
   description: string;
-  author: string;
+  tags: string[];
+  ref: string;
+  img?: string;
 }
 
-const { image_author, img, title, date, description, author, ref } =
-  Astro.props;
+const { title, date, description, tags, ref, img } = Astro.props;
+
+// Tag color mapping
+const tagColors: { [key: string]: { bg: string; text: string } } = {
+  Leadership: { bg: "bg-purple-100", text: "text-purple-800" },
+  Management: { bg: "bg-blue-100", text: "text-blue-800" },
+  Presentation: { bg: "bg-pink-100", text: "text-pink-800" },
+  Product: { bg: "bg-green-100", text: "text-green-800" },
+  Research: { bg: "bg-red-100", text: "text-red-800" },
+  Frameworks: { bg: "bg-amber-100", text: "text-amber-800" },
+  Design: { bg: "bg-indigo-100", text: "text-indigo-800" },
+  "Software Development": { bg: "bg-blue-100", text: "text-blue-800" },
+  Tools: { bg: "bg-purple-100", text: "text-purple-800" },
+  SaaS: { bg: "bg-rose-100", text: "text-rose-800" },
+  Podcasts: { bg: "bg-fuchsia-100", text: "text-fuchsia-800" },
+  "Customer Success": { bg: "bg-green-100", text: "text-green-800" },
+};
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-gray-100 font-sans">
-    <!-- Card Container -->
-    <div
-      class="max-w-sm mx-auto gap-4 bg-white rounded-lg shadow-lg overflow-hidden mt-10"
-    >
-      <!-- Imagen -->
-      <div
-        class="w-full h-56 bg-cover bg-center"
-        style={{ backgroundImage: `url(${img})` }}
-      >
-        <!-- El background de la imagen es dinamico -->
-      </div>
-
-      <!-- Contenido -->
-      <div class="p-6">
-        <!-- Titulo -->
-        <a class="text-2xl font-semibold text-gray-800 mb-2" href={ref}
-          >{title}</a
-        >
-
-        <!-- Descripcion -->
-        <p class="text-gray-600 text-base mb-4">{description}</p>
-
-        <!-- Author y author_image -->
-        <div class="flex items-center mt-6">
-          <!-- Imagen del autor -->
-          <img src={image_author} alt={title} class="w-10 h-10 rounded-full" />
-
-          <!-- Información del autor y fecha -->
-          <div class="ml-4">
-            <p class="text-gray-800 text-sm font-medium">{author}</p>
-            <p class="text-gray-500 text-xs">{date}</p>
-          </div>
-        </div>
-      </div>
+<article
+  class="bg-white dark:bg-card-dark rounded-xl overflow-hidden shadow-lg transition-transform hover:-translate-y-1"
+>
+  {img && <img src={img} alt={title} class="w-full h-48 object-cover" />}
+  <div class="p-6">
+    <p class="text-indigo-600 dark:text-indigo-400 text-sm font-medium">
+      {date}
+    </p>
+    <a href={ref} class="block mt-2">
+      <h2 class="text-xl font-semibold text-gray-900 dark:text-white">
+        {title}
+      </h2>
+    </a>
+    <p class="mt-2 text-gray-600 dark:text-gray-300">{description}</p>
+    <div class="mt-4 flex flex-wrap gap-2">
+      {
+        tags.map((tag) => (
+          <span
+            class={`px-3 py-1 rounded-full text-sm font-medium ${tagColors[tag]?.bg || "bg-gray-100"} ${tagColors[tag]?.text || "text-gray-800"}`}
+          >
+            {tag}
+          </span>
+        ))
+      }
     </div>
-  </body>
-</html>
+  </div>
+</article>

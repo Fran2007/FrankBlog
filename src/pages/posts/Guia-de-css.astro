@@ -1,0 +1,310 @@
+---
+import PostsLayout from "../../layouts/PostsLayout.astro";
+import { frontmatter } from "./Astro-vs-otros-frameworks.astro";
+
+export const frontmatterCss = {
+  image_author: "../public/assets/UserImages/AlejandroLobos.png",
+  img: "/assets/frameworks/css.png",
+  title: "Programacion con css: Teoria, ejemplos y tips",
+  date: "Enero 08, 2025",
+  tags: ["Design", "Presentation", "Product"],
+  author: "Alejandro Lobos",
+};
+---
+
+<PostsLayout
+  image_author={frontmatterCss.image_author}
+  img={frontmatterCss.img}
+  title={frontmatterCss.title}
+  date={frontmatterCss.date}
+  tags={frontmatterCss.tags}
+  author={frontmatterCss.author}
+>
+  <html lang="en">
+    <body>
+      <header>
+        <p>
+          Esta guía está diseñada para ayudarte a comprender y utilizar CSS de
+          manera efectiva. Aprenderás desde los conceptos básicos hasta técnicas
+          avanzadas, con ejemplos prácticos y consejos útiles para mejorar tus
+          habilidades.
+        </p>
+      </header>
+
+      <section>
+        <h2>¿Qué es CSS?</h2>
+        <p>
+          CSS (Cascading Style Sheets) es un lenguaje de hojas de estilo que se
+          utiliza para controlar la apariencia de las páginas web. Permite
+          definir colores, fuentes, tamaños, espacios y mucho más para que los
+          sitios web sean atractivos y funcionales.
+        </p>
+        <div class="tips">
+          <h3>Consejo Rápido</h3>
+          <p>
+            Separa siempre el contenido HTML del diseño CSS para mantener tu
+            código limpio y fácil de mantener.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>¿Qué es CSS?</h2>
+        <p>
+          CSS (Cascading Style Sheets) es un lenguaje de hojas de estilo que se
+          utiliza para controlar la apariencia de las páginas web. Permite
+          definir colores, fuentes, tamaños, espacios y mucho más para que los
+          sitios web sean atractivos y funcionales.
+        </p>
+        <div class="tips">
+          <h3>Consejo Rápido</h3>
+          <p>
+            Separa siempre el contenido HTML del diseño CSS para mantener tu
+            código limpio y fácil de mantener.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Cómo Usar CSS</h2>
+        <p>
+          Existen tres formas principales de aplicar CSS a un documento HTML:
+        </p>
+        <ul>
+          <li>
+            <strong>Estilos en línea:</strong> Se escriben directamente en los elementos
+            HTML utilizando el atributo style.
+          </li>
+          <li>
+            <strong>Hoja de estilos interna:</strong> Se escribe dentro de la etiqueta
+            {`<style>`}
+            en el {`<head>`} del documento HTML.
+          </li>
+          <li>
+            <strong>Hoja de estilos externa:</strong> Se utiliza un archivo CSS separado
+            que se vincula al documento HTML mediante la etiqueta <code
+              >link</code
+            >.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Propiedades Básicas de CSS</h2>
+        <p>
+          CSS ofrece una gran variedad de propiedades que puedes utilizar para
+          personalizar el diseño de una página web. Aquí te mostramos algunas de
+          las más comunes:
+        </p>
+        <table
+          class="table-auto border-collapse border border-gray-400 w-full mt-6"
+        >
+          <thead>
+            <tr class="bg-blue-500 text-white">
+              <th class="border border-gray-400 px-4 py-2">Propiedad</th>
+              <th class="border border-gray-400 px-4 py-2">Descripción</th>
+              <th class="border border-gray-400 px-4 py-2">Ejemplo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-gray-100">
+              <td class="border border-gray-400 px-4 py-2">color</td>
+              <td class="border border-gray-400 px-4 py-2"
+                >Cambia el color del texto.</td
+              >
+              <td class="border border-gray-400 px-4 py-2">color: red;</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-400 px-4 py-2">background-color</td>
+              <td class="border border-gray-400 px-4 py-2"
+                >Establece el color de fondo de un elemento.</td
+              >
+              <td class="border border-gray-400 px-4 py-2"
+                >background-color: yellow;</td
+              >
+            </tr>
+            <tr class="bg-gray-100">
+              <td class="border border-gray-400 px-4 py-2">font-size</td>
+              <td class="border border-gray-400 px-4 py-2"
+                >Cambia el tamaño del texto.</td
+              >
+              <td class="border border-gray-400 px-4 py-2">font-size: 20px;</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-400 px-4 py-2">margin</td>
+              <td class="border border-gray-400 px-4 py-2"
+                >Establece el espacio exterior de un elemento.</td
+              >
+              <td class="border border-gray-400 px-4 py-2">margin: 10px;</td>
+            </tr>
+            <tr class="bg-gray-100">
+              <td class="border border-gray-400 px-4 py-2">padding</td>
+              <td class="border border-gray-400 px-4 py-2"
+                >Establece el espacio interior de un elemento.</td
+              >
+              <td class="border border-gray-400 px-4 py-2">padding: 15px;</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-400 px-4 py-2">border</td>
+              <td class="border border-gray-400 px-4 py-2"
+                >Define un borde alrededor de un elemento.</td
+              >
+              <td class="border border-gray-400 px-4 py-2"
+                >border: 1px solid black;</td
+              >
+            </tr>
+            <tr class="bg-gray-100">
+              <td class="border border-gray-400 px-4 py-2">width</td>
+              <td class="border border-gray-400 px-4 py-2"
+                >Establece el ancho de un elemento.</td
+              >
+              <td class="border border-gray-400 px-4 py-2">width: 100px;</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-400 px-4 py-2">height</td>
+              <td class="border border-gray-400 px-4 py-2"
+                >Establece la altura de un elemento.</td
+              >
+              <td class="border border-gray-400 px-4 py-2">height: 200px;</td>
+            </tr>
+            <tr class="bg-gray-100">
+              <td class="border border-gray-400 px-4 py-2">font-family</td>
+              <td class="border border-gray-400 px-4 py-2"
+                >Define la familia de fuentes para el texto.</td
+              >
+              <td class="border border-gray-400 px-4 py-2"
+                >font-family: Arial, sans-serif;</td
+              >
+            </tr>
+            <tr>
+              <td class="border border-gray-400 px-4 py-2">text-align</td>
+              <td class="border border-gray-400 px-4 py-2"
+                >Alinea el texto dentro de un elemento.</td
+              >
+              <td class="border border-gray-400 px-4 py-2"
+                >text-align: center;</td
+              >
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="my-8">
+        <h2 class="text-2xl font-semibold text-blue-700">
+          Diseño Responsivo con CSS
+        </h2>
+        <p class="mt-4">
+          El diseño responsivo es clave para crear sitios web que se adapten a
+          diferentes tamaños de pantalla. CSS ofrece varias herramientas para
+          lograr esto:
+        </p>
+        <h3 class="text-xl font-semibold text-blue-600">Unidades Relativas</h3>
+        <p>
+          Utiliza unidades relativas como em, rem y <code>%</code> para tamaños de
+          fuente y márgenes.
+        </p>
+        <h3 class="text-xl font-semibold text-blue-600">Media Queries</h3>
+        <p>
+          Las media queries permiten aplicar estilos basados en el tamaño de la
+          pantalla.
+        </p>
+        <pre
+          class="bg-gray-800 text-gray-100 p-4 rounded-md overflow-x-auto">{
+`
+{@media (max-width: 768px) {
+  body {
+    background-color: lightgray;
+  }
+}}`
+}</pre>
+        <p>
+          En este ejemplo, el fondo del sitio cambiará a color gris claro en
+          pantallas con un ancho máximo de 768px.
+        </p>
+      </section>
+
+      <section class="my-8">
+        <h2 class="text-2xl font-semibold text-blue-700">
+          Flexbox y Grid: Modelos de Diseño Modernos
+        </h2>
+        <p>
+          Flexbox y Grid son modelos de diseño en CSS que facilitan la creación
+          de estructuras complejas y adaptativas.
+        </p>
+        <h3 class="text-xl font-semibold text-blue-600">Flexbox</h3>
+        <p>
+          Flexbox es ideal para crear diseños unidimensionales (filas o
+          columnas).
+        </p>
+        <pre
+          class="bg-gray-800 text-gray-100 p-4 rounded-md overflow-x-auto">{
+`.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+`}</pre>
+        <h3 class="text-xl font-semibold text-blue-600">Grid</h3>
+        <p>
+          Grid es perfecto para crear diseños bidimensionales (filas y
+          columnas).
+        </p>
+        <pre class="bg-gray-800 text-gray-100 p-4 rounded-md overflow-x-auto">
+        </pre>
+      </section>
+
+      <section class="my-8">
+        <h2 class="text-2xl font-semibold text-blue-700">
+          Animaciones y Transiciones en CSS
+        </h2>
+        <p>
+          CSS también permite añadir animaciones y transiciones para mejorar la
+          experiencia del usuario.
+        </p>
+        <h3 class="text-xl font-semibold text-blue-600">Transiciones</h3>
+        <p>
+          Las transiciones permiten cambiar de un estilo a otro de forma
+          gradual.
+        </p>
+        <pre
+          class="bg-gray-800 text-gray-100 p-4 rounded-md overflow-x-auto">{`
+.button {
+  background-color: blue;
+  transition: background-color 0.3s ease;
+}
+.button:hover {
+  background-color: red;
+}
+        
+`}</pre>
+        <h3 class="text-xl font-semibold text-blue-600">Animaciones</h3>
+        <p>
+          Las animaciones permiten definir cambios de estilo en etapas
+          específicas.
+        </p>
+        <pre
+          class="bg-gray-800 text-gray-100 p-4 rounded-md overflow-x-auto">{
+`
+@keyframes example {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
+.div {
+  animation-name: example;
+  animation-duration: 4s;
+}
+`                       
+}</pre>
+      </section>
+
+      <footer class="text-center py-4 bg-gray-700 text-white">
+        <p>
+          © 2025 Guía Completa de CSS. Todos los derechos reservados. | <a
+            href="#"
+            class="underline">Política de Privacidad</a
+          >
+        </p>
+      </footer>
+    </body>
+  </html>
+</PostsLayout>

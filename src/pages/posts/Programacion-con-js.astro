@@ -1,0 +1,190 @@
+---
+import PostsLayout from "../../layouts/PostsLayout.astro";
+
+export const frontmatterJs = {
+  image_author: "../public/assets/UserImages/AlejandroLobos.png",
+  img: "/assets/frameworks/js.png",
+  title: "Programacion con JavaScript: Teoría, Ejemplos y Tips Útiles",
+  date: "Enero 08, 2025",
+  tags: ["Software Development", "Management"],
+  author: "Alejandro Lobos",
+};
+---
+
+<PostsLayout
+  image_author={frontmatterJs.image_author}
+  img={frontmatterJs.img}
+  title={frontmatterJs.title}
+  date={frontmatterJs.date}
+  tags={frontmatterJs.tags}
+  author={frontmatterJs.author}
+>
+  <html lang="en">
+    <body>
+      <header>
+        <p>
+          Esta guía está diseñada para ayudarte a comprender y utilizar
+          JavaScript de manera efectiva. Aprenderás desde los conceptos básicos
+          hasta técnicas avanzadas, con ejemplos prácticos y consejos útiles
+          para mejorar tus habilidades en desarrollo web.
+        </p>
+      </header>
+
+      <section>
+        <h2>¿Qué es JavaScript?</h2>
+        <p>
+          JavaScript es un lenguaje de programación que permite agregar
+          interactividad y funcionalidades avanzadas a los sitios web. Es uno de
+          los pilares del desarrollo web junto con HTML y CSS.
+        </p>
+        <div class="tips">
+          <h3>Consejo Rápido</h3>
+          <p>
+            JavaScript es un lenguaje de tipo dinámico, lo que significa que no
+            es necesario definir los tipos de datos al declarar variables.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Cómo Usar JavaScript</h2>
+        <p>Existen varias formas de incluir JavaScript en un proyecto web:</p>
+        <ul>
+          <li>
+            <strong>Script en línea:</strong> Se escribe directamente dentro de las
+            etiquetas HTML utilizando el atributo <code>onclick</code> o <code
+              >onload</code
+            >.
+          </li>
+          <li>
+            <strong>Script interno:</strong> Se incluye dentro de la etiqueta <code
+              >&lt;script&gt;</code
+            > en el documento HTML.
+          </li>
+          <li>
+            <strong>Script externo:</strong> Se utiliza un archivo separado con extensión
+            <code>.js</code> que se enlaza al HTML mediante la etiqueta <code
+              >&lt;script src="archivo.js"&gt;</code
+            >.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Ejemplo Básico: Mostrar un Mensaje en la Consola</h2>
+        <p>
+          Aquí tienes un ejemplo sencillo de cómo mostrar un mensaje en la
+          consola del navegador:
+        </p>
+        <pre
+          class="bg-gray-800 text-gray-100 p-4 rounded-md overflow-x-auto"><code>{`console.log('¡Hola, JavaScript!');`}</code></pre>
+        <p>
+          Este código imprime el mensaje <strong>"¡Hola, JavaScript!"</strong> en
+          la consola del navegador.
+        </p>
+      </section>
+
+      <section class="my-8">
+        <h2 class="text-2xl font-semibold text-blue-700">
+          Propiedades y Métodos Comunes de JavaScript
+        </h2>
+        <p class="mt-4">
+          A continuación, te mostramos algunas de las propiedades y métodos más
+          comunes que puedes usar en JavaScript:
+        </p>
+        <table
+          class="table-auto border-collapse border border-gray-400 w-full mt-6"
+        >
+          <thead>
+            <tr class="bg-blue-500 text-white">
+              <th class="border border-gray-400 px-4 py-2"
+                >Propiedad / Método</th
+              >
+              <th class="border border-gray-400 px-4 py-2">Descripción</th>
+              <th class="border border-gray-400 px-4 py-2">Ejemplo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-gray-100">
+              <td class="border border-gray-400 px-4 py-2">console.log()</td>
+              <td class="border border-gray-400 px-4 py-2"
+                >Imprime mensajes en la consola del navegador.</td
+              >
+              <td class="border border-gray-400 px-4 py-2"
+                >console.log('Mensaje');</td
+              >
+            </tr>
+            <tr>
+              <td class="border border-gray-400 px-4 py-2">alert()</td>
+              <td class="border border-gray-400 px-4 py-2"
+                >Muestra una alerta en el navegador.</td
+              >
+              <td class="border border-gray-400 px-4 py-2">alert('Hola');</td>
+            </tr>
+            <tr class="bg-gray-100">
+              <td class="border border-gray-400 px-4 py-2"
+                >document.getElementById()</td
+              >
+              <td class="border border-gray-400 px-4 py-2"
+                >Selecciona un elemento HTML por su ID.</td
+              >
+              <td class="border border-gray-400 px-4 py-2"
+                >document.getElementById('titulo');</td
+              >
+            </tr>
+            <tr>
+              <td class="border border-gray-400 px-4 py-2"
+                >addEventListener()</td
+              >
+              <td class="border border-gray-400 px-4 py-2"
+                >Añade un evento a un elemento HTML.</td
+              >
+              <td class="border border-gray-400 px-4 py-2"
+                >button.addEventListener('click', funcion);</td
+              >
+            </tr>
+            <tr class="bg-gray-100">
+              <td class="border border-gray-400 px-4 py-2">Math.random()</td>
+              <td class="border border-gray-400 px-4 py-2"
+                >Devuelve un número aleatorio entre 0 y 1.</td
+              >
+              <td class="border border-gray-400 px-4 py-2">Math.random();</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="my-8">
+        <h2 class="text-2xl font-semibold text-blue-700">
+          Funciones en JavaScript
+        </h2>
+        <p class="mt-4">
+          Las funciones son bloques de código que se pueden reutilizar en tu
+          programa.
+        </p>
+        <h3 class="text-xl font-semibold text-blue-600">Ejemplo de Función</h3>
+        <pre
+          class="bg-gray-800 text-gray-100 p-4 rounded-md overflow-x-auto">
+          <code>{`
+function saludar(nombre) {
+  return 'Hola, ' + nombre;
+}`
+}</code>
+        </pre>
+        <p>
+          Este código define una función que toma un nombre como argumento y
+          devuelve un saludo.
+        </p>
+      </section>
+
+      <footer class="text-center py-4 bg-gray-700 text-white">
+        <p>
+          © 2025 Guía Completa de JavaScript. Todos los derechos reservados. | <a
+            href="#"
+            class="underline">Política de Privacidad</a
+          >
+        </p>
+      </footer>
+    </body>
+  </html>
+</PostsLayout>

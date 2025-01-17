@@ -1,27 +1,39 @@
 ---
-import { useContext } from "react";
-import { ThemeContext } from "./ToggleTheme";
-import { Button } from "../components/Button";
+const navItems = [
+  { label: "Blog", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/Contact" },
+];
 ---
 
-<div class="bg-gray-800 p-4">
-  <div class="container mx-auto flex justify-between items-center">
-    <a class="text-white text-xl font-semibold hover:text-gray-400"
-      >FrankDev.blog</a
-    >
-    <div class="space-x-4">
-      <a
-        href="/Home"
-        class="text-white text-xl font-semibold hover:text-gray-400">Home</a
+<nav
+  class="sticky top-0 z-50 bg-white dark:bg-card-dark border-b border-gray-200 dark:border-gray-800"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <a href="/" class="text-2xl font-bold text-gray-900 dark:text-white"
+        >FrankDev.blog</a
       >
-      <a
-        href="/Blog"
-        class="text-white text-xl font-semibold hover:text-gray-400">Blog</a
-      >
-      <a
-        href="/Contact"
-        class="text-white text-xl font-semibold hover:text-gray-400">Contact</a
-      >
+      <div class="flex items-center space-x-8">
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium"
+            >
+              {item.label}
+            </a>
+          ))
+        }
+        <button
+          id="theme-toggle"
+          class="p-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+          aria-label="Toggle theme"
+        >
+          <i class="ph ph-sun light-icon hidden dark:block text-xl"></i>
+          <i class="ph ph-moon dark-icon block dark:hidden text-xl"></i>
+        </button>
+      </div>
     </div>
   </div>
-</div>
+</nav>

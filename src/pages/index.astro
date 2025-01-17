@@ -1,10 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
-import Home from "./Home.astro";
+import CardLayout from "../layouts/CardLayout.astro";
+import { Posts } from "./repository/Posts";
 ---
 
-<Layout>
-  <Header />
-  <Home />
+<Layout title="Blog">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">
+      All blog posts
+    </h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {Posts.map((post) => <CardLayout {...post} />)}
+    </div>
+  </main>
 </Layout>

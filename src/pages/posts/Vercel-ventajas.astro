@@ -3,12 +3,10 @@ import PostsLayout from "../../layouts/PostsLayout.astro";
 
 export const frontmatterVercel = {
   image_author: "../public/assets/UserImages/Nicobyte.jpg",
-  img: "../../assets/frameworks/angular.png",
+  img: "../../assets/frameworks/vercelPortada.png",
   title: "Ventajas de vercel",
   date: "March 5, 2025",
-  topic: "Learning",
-  topic01: "Astro",
-  topic02: "Dessarrollo",
+  tags: ["React", "frameworks", "JavaScript"],
   author: "Sofia Fernandez",
 };
 ---
@@ -18,9 +16,7 @@ export const frontmatterVercel = {
   img={frontmatterVercel.img}
   title={frontmatterVercel.title}
   date={frontmatterVercel.date}
-  topic={frontmatterVercel.topic}
-  topic01={frontmatterVercel.topic01}
-  topic02={frontmatterVercel.topic02}
+  tags={frontmatterVercel.tags}
   author={frontmatterVercel.author}
 >
   <html lang="es">

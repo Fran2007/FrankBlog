@@ -6,14 +6,11 @@ export interface Props {
   img: string;
   title: string;
   date: string;
-  topic: string;
-  topic01: string;
-  topic02: string;
+  tags: string[];
   author: string;
 }
 
-const { img, title, topic, topic01, topic02, date, author, image_author } =
-  Astro.props;
+const { img, title, date, author, image_author } = Astro.props;
 ---
 
 <html lang="en">
@@ -81,14 +78,6 @@ const { img, title, topic, topic01, topic02, date, author, image_author } =
         <section class="px-6 py-4 text-gray-700">
           <slot />
         </section>
-
-        <!-- <div class="flex flex-wrap gap-1 mb-4"></div> -->
-
-        <footer class="px-6 pb-4 text-sm text-gray-500">
-          <span class="topic-pill">{topic}</span>
-          <span class="topic-pill">{topic01}</span>
-          <span class="topic-pill">{topic02}</span>
-        </footer>
       </article>
     </main>
   </body>
